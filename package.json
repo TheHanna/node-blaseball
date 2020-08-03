@@ -1,0 +1,28 @@
+{
+  "name": "node-blaseball",
+  "version": "1.0.0",
+  "description": "Blaseball API for Node.js, written in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/ava",
+    "build": "tsc"
+  },
+  "keywords": [
+    "blaseball"
+  ],
+  "author": "TheHanna",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^3.11.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/cheerio": "^0.22.21",
+    "@types/node-fetch": "^2.5.7",
+    "cheerio": "^1.0.0-rc.3",
+    "node-fetch": "^2.6.0"
+  }
+}
