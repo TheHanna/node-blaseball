@@ -1,6 +1,6 @@
 {
   "name": "node-blaseball",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Blaseball API for Node.js, written in TypeScript",
   "main": "index.js",
   "scripts": {
