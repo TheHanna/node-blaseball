@@ -13,5 +13,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["jobs", "build", "node_modules"]
+  "exclude": ["jobs", "build", "node_modules", "ava.config.js", "**/**.spec.*"]
 }

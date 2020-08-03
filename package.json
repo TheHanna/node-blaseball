@@ -1,10 +1,10 @@
 {
   "name": "node-blaseball",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Blaseball API for Node.js, written in TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/ava",
+    "test": "npm run build; node ./node_modules/.bin/ava",
     "build": "tsc"
   },
   "keywords": [
@@ -13,6 +13,7 @@
   "author": "TheHanna",
   "license": "MIT",
   "devDependencies": {
+    "@ava/typescript": "^1.1.1",
     "ava": "^3.11.1",
     "dotenv": "^8.2.0",
     "typescript": "^3.9.7"
