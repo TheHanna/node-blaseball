@@ -80,8 +80,8 @@ class Blaseball {
     return this.doRetry(url).then(this.extractRes);
   }
 
-  async getPlayers(...id: string[]): Promise<Response> {
-    const params = new URLSearchParams({ id });
+  async getPlayers(...ids: string[]): Promise<Response> {
+    const params = new URLSearchParams({ ids });
     const url = `${endpoints.PLAYERS}?${params}`;
     return this.doRetry(url).then(this.extractRes);
   }
