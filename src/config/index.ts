@@ -1,16 +1,17 @@
 interface Endpoints {
-  ALL_DIVS: string;
+  ALL_DIVISIONS: string;
   ALL_TEAMS: string;
   GLOBAL_EVENTS: string;
-  LEAGUE: string;
-  SUB_LEAGUE: string;
-  GAME: string;
+  DIVISIONS: string;
+  LEAGUES: string;
+  SUB_LEAGUES: string;
+  GAMES: string;
   OFFSEASON_SETUP: string;
   OFFSEASON_RECAP: string;
   OFFSEASON_BONUS_RESULTS: string;
   OFFSEASON_DECREE_RESULTS: string;
   PLAYOFF_DETAILS: string;
-  TEAM: string;
+  TEAMS: string;
   PLAYERS: string;
   SEASON: string;
   SIM_DATA: string;
@@ -20,40 +21,42 @@ const {
   ALL_TEAMS,
   ALL_DIVS,
   GLOBAL_EVENTS,
-  LEAGUE,
-  SUB_LEAGUE,
-  GAME,
+  DIVISIONS,
+  LEAGUES,
+  SUB_LEAGUES,
+  GAMES,
   OFFSEASON_SETUP,
   OFFSEASON_RECAP,
   OFFSEASON_BONUS_RESULTS,
   OFFSEASON_DECREE_RESULTS,
   PLAYOFF_DETAILS,
-  TEAM,
+  TEAMS,
   PLAYERS,
-  SEASON,
+  SEASONS,
   SIM_DATA,
 } = process.env;
 
-let URL = process.env.URL || "https://blaseball.com/database";
+const URL = process.env.URL || 'https://blaseball.com/database/';
+
+const buildEndpoint = (defaultValue: string, providedValue?: string): string => `${URL}${providedValue || defaultValue}`;
 
 const endpoints: Endpoints = {
-  ALL_TEAMS: `${URL}${ALL_TEAMS || "allTeams"}`,
-  ALL_DIVS: `${URL}${ALL_DIVS || "allDivisions"}`,
-  GLOBAL_EVENTS: `${URL}${GLOBAL_EVENTS || "globalEvents"}`,
-  LEAGUE: `${URL}${LEAGUE || "league"}`,
-  SUB_LEAGUE: `${URL}${SUB_LEAGUE || "subleague"}`,
-  GAME: `${URL}${GAME || "gameById"}`,
-  OFFSEASON_SETUP: `${URL}${OFFSEASON_SETUP || "offseasonSetup"}`,
-  OFFSEASON_RECAP: `${URL}${OFFSEASON_RECAP || "offseasonRecap"}`,
-  OFFSEASON_BONUS_RESULTS: `${URL}${OFFSEASON_BONUS_RESULTS || "bonusResults"}`,
-  OFFSEASON_DECREE_RESULTS: `${URL}${
-    OFFSEASON_DECREE_RESULTS || "decreeResults"
-  }`,
-  PLAYOFF_DETAILS: `${URL}${PLAYOFF_DETAILS || "playoffs"}`,
-  TEAM: `${URL}${TEAM || "team"}`,
-  PLAYERS: `${URL}${PLAYERS || "players"}`,
-  SEASON: `${URL}${SEASON || "season"}`,
-  SIM_DATA: `${URL}${SIM_DATA || "simulationData"}`,
+  ALL_TEAMS: buildEndpoint('allTeams', ALL_TEAMS),
+  ALL_DIVISIONS: buildEndpoint('allDivisions', ALL_DIVS),
+  GLOBAL_EVENTS: buildEndpoint('globalEvents', GLOBAL_EVENTS),
+  DIVISIONS: buildEndpoint('division', DIVISIONS),
+  LEAGUES: buildEndpoint('league', LEAGUES),
+  SUB_LEAGUES: buildEndpoint('subleague', SUB_LEAGUES),
+  GAMES: buildEndpoint('game', GAMES),
+  OFFSEASON_SETUP: buildEndpoint('offseasonSetup', OFFSEASON_SETUP),
+  OFFSEASON_RECAP: buildEndpoint('offseasonRecap', OFFSEASON_RECAP),
+  OFFSEASON_BONUS_RESULTS: buildEndpoint('bonusResults', OFFSEASON_BONUS_RESULTS),
+  OFFSEASON_DECREE_RESULTS: buildEndpoint('decreeResults', OFFSEASON_DECREE_RESULTS),
+  PLAYOFF_DETAILS: buildEndpoint('playoffs', PLAYOFF_DETAILS),
+  TEAMS: buildEndpoint('team', TEAMS),
+  PLAYERS: buildEndpoint('players', PLAYERS),
+  SEASON: buildEndpoint('season', SEASONS),
+  SIM_DATA: buildEndpoint('simulationData', SIM_DATA),
 };
 
 export default endpoints;

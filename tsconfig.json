@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
     "allowJs": true,
     "outDir": "build",
     "rootDir": "src",
@@ -13,5 +15,13 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["jobs", "build", "node_modules", "ava.config.js", "**/**.spec.*"]
+  "include": [
+    "src",
+    "declarations.d.ts"
+  ],
+  "exclude": [
+    "build",
+    "node_modules",
+    "ava.config.js"
+  ]
 }
