@@ -2,7 +2,7 @@
 
 node-blaseball is a promise-based, simple API interface library for Blaseball, written in TypeScript.
 
-Based on the [modern-baseball](https://github.com/helloimowen/modern-blaseball) Python package by [helloimowen](https://github.com/helloimowen).
+Based on the [modern-blaseball](https://github.com/helloimowen/modern-blaseball) Python package by [helloimowen](https://github.com/helloimowen).
 
 ## Getting Started
 
